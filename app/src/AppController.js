@@ -4,41 +4,9 @@
  * @param $mdSidenav
  * @constructor
  */
-function AppController(UsersDataService, $mdSidenav) {
-  var self = this;
-
-  self.selected     = null;
-  self.users        = [ ];
-  self.selectUser   = selectUser;
-  self.toggleList   = toggleUsersList;
-
-  // Load all registered users
-
-  UsersDataService
-        .loadAllUsers()
-        .then( function( users ) {
-          self.users    = [].concat(users);
-          self.selected = users[0];
-        });
-
-  // *********************************
-  // Internal methods
-  // *********************************
-
-  /**
-   * Hide or Show the 'left' sideNav area
-   */
-  function toggleUsersList() {
-    $mdSidenav('left').toggle();
-  }
-
-  /**
-   * Select the current avatars
-   * @param menuId
-   */
-  function selectUser ( user ) {
-    self.selected = angular.isNumber(user) ? $scope.users[user] : user;
-  }
+function AppController($scope, $http) {
+	$http.get("https://spreadsheets.google.com/feeds/list/1efUMXdadlgB2Vr4ITq_RkECUX0f_DpNkPTuj6xL3bUE/ovml8vg/public/values?alt=json")
+		.success(function(response) {$scope.teams = response.feed.entry;});
 }
 
-export default [ 'UsersDataService', '$mdSidenav', AppController ];
+export default [ '$scope', '$http', AppController ];
