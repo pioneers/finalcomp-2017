@@ -1,19 +1,29 @@
 <h1>2017 Qualification Matches</h1>
 <md-list flex="">
     <md-list-item class="md-3-line"  ng-repeat="match in qual_matches">
-        <div class="md-list-item-text team" layout="column">
-            <h3>{{ match.gsx$matchnumber.$t }}</h3>
-            <h3>{{ match.gsx$matchtime.$t }}</h3>
-            <h3>{{ match.gsx$blue1number.$t }}</h3>
-            <h3>{{ match.gsx$blue1name.$t }}</h3>
-            <h3>{{ match.gsx$blue2number.$t }}</h3>
-            <h3>{{ match.gsx$blue2name.$t }}</h3>
-            <h3>{{ match.gsx$gold1number.$t }}</h3>
-            <h3>{{ match.gsx$gold1name.$t }}</h3>
-            <h3>{{ match.gsx$gold2number.$t }}</h3>
-            <h3>{{ match.gsx$gold2name.$t }}</h3>
-            <h3>{{ match.gsx$bluescore.$t }}</h3>
-            <h3>{{ match.gsx$goldscore.$t }}</h3>
+        <div class="md-list-item-text" layout="row">
+            <div layout="column">
+                <h3>{{ match.gsx$matchnumber.$t }}</h3>
+                <h3>{{ match.gsx$matchtime.$t }}</h3>
+            </div>
+            <md-card>
+                <md-card-content>
+                    <h3>{{ match.gsx$blue1number.$t }}: {{ match.gsx$blue1name.$t }}</h3>
+                    <h3>{{ match.gsx$blue2number.$t }}: {{ match.gsx$blue2name.$t }}</h3>
+                    <h2 md-colors="{color: 'primary-official'}">
+                        {{ match.gsx$bluescore.$t }}
+                    </h2>
+                </md-card-content>
+            </md-card>
+            <md-card>
+                <md-card-content>
+                    <h3>{{ match.gsx$gold1number.$t }}: {{ match.gsx$gold1name.$t }}</h3>
+                    <h3>{{ match.gsx$gold2number.$t }}: {{ match.gsx$gold2name.$t }}</h3>
+                    <h2 md-colors="{color: 'accent-official'}">
+                        {{ match.gsx$goldscore.$t }}
+                    </h2>
+                </md-card-content>
+            </md-card>
         </div>
         <md-divider></md-divider>
     </md-list-item>
