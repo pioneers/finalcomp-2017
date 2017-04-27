@@ -4,11 +4,17 @@ import angular from 'angular';
 import 'angular-animate';
 import 'angular-aria';
 import 'angular-material';
+import 'angular-route';
 
-import AppController from 'src/AppController';
+import HomeController from 'src/ctrls/HomeController';
+import TeamsController from 'src/ctrls/TeamsController';
+import ScheduleController from 'src/ctrls/ScheduleController';
+import QualsController from 'src/ctrls/QualsController';
+import ElimsController from 'src/ctrls/ElimsController';
+import RankingsController from 'src/ctrls/RankingsController';
 import Users from 'src/users/Users';
 
-export default angular.module( 'starter-app', [ 'ngMaterial', Users.name ] )
+export default angular.module( 'finalComp', [ 'ngRoute', 'ngMaterial', Users.name ] )
   .config(($mdIconProvider, $mdThemingProvider) => {
     // Register the user `avatar` icons
     $mdIconProvider
@@ -20,8 +26,66 @@ export default angular.module( 'starter-app', [ 'ngMaterial', Users.name ] )
       .icon("twitter", "./assets/svg/twitter.svg", 24)
       .icon("phone", "./assets/svg/phone.svg", 24);
 
+	var darkerYellowMap = $mdThemingProvider.extendPalette('amber', {
+		'A200': '#FFAB00',
+    'official': '#c7aa36',
+	});
+
+	var darkerBlueMap = $mdThemingProvider.definePalette('PiEBlue', {
+		'50': 'bac0c8',
+		'100': 'a3abb6',
+		'200': '8d97a4',
+		'300': '768292',
+		'400': '5f6d80',
+		'500': '48586e',
+		'600': '31435c',
+		'700': '1b2f4a',
+		'800': '182a42',
+		'900': '15253b',
+		'A100': '1b2f4a',
+		'A200': '1b2f4a',
+		'A400': 'd1d5da',
+		'A700': '2f5382',
+    'official': '#2b3d62',
+	});
+
+	$mdThemingProvider.definePalette('darkerYellow', darkerYellowMap);
+
     $mdThemingProvider.theme('default')
-      .primaryPalette('brown')
-      .accentPalette('red');
+      .primaryPalette('PiEBlue')
+      .accentPalette('darkerYellow')
+	  .backgroundPalette('blue-grey');
   })
-  .controller('AppController', AppController);
+  .config(function($routeProvider) {
+    $routeProvider 
+      .when('/', {
+        templateUrl : 'pages/home.html',
+        controller : 'HomeController'
+      })
+      .when('/schedule', {
+        templateUrl : 'pages/schedule.html',
+        controller : 'ScheduleController'
+      })
+      .when('/teams', {
+        templateUrl : 'pages/teams.html',
+        controller : 'TeamsController'
+      })
+      .when('/elims', {
+        templateUrl : 'pages/elims.html',
+        controller : 'ElimsController'
+      })
+      .when('/quals', {
+        templateUrl : 'pages/quals.html',
+        controller : 'QualsController'
+      })
+      .when('/rankings', {
+        templateUrl : 'pages/rankings.html',
+        controller : 'RankingsController'
+      });
+  })
+  .controller('HomeController', HomeController)
+  .controller('ScheduleController', ScheduleController)
+  .controller('TeamsController', TeamsController)
+  .controller('ElimsController', ElimsController)
+  .controller('QualsController', QualsController)
+  .controller('RankingsController', RankingsController);
