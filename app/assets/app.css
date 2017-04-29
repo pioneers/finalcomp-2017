@@ -169,6 +169,10 @@ span.name {
   text-align: center;
 }
 
+.italic {
+  font-style: italic;
+}
+
 img {
   display: block;
   margin: auto;
