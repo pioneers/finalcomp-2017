@@ -1,1 +1,9 @@
-Pls
+<h3>Saturday</h3>
+<md-list flex="">
+    <md-list-item class="md-3-line" ng-repeat="n in range(1,satTime.length)">
+        <div layout="column">
+            <h4> {{ satTime[n] }} {{ satDesc[n].task }} </h4>
+            <h4 class="italic"> {{ satDesc[n].place }} </h4>
+        </div>
+    </md-list-item>
+</md-list>

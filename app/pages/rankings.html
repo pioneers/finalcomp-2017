@@ -1,1 +1,22 @@
-Pls
+<md-list flex="">
+    <md-list-item class="md-3-line" ng-repeat="team in ranking_sorter">
+        <div class="md-list-item-text" layout="row">
+            <div layout="row" style="width: 100%">
+                <div flex="40">
+                    <h4 md-colors="{color: 'primary-official'}"><strong>{{ team.gsx$teamname.$t }}</strong></h4>
+                    <h4><span class="italic">Rank: </span>{{ team.gsx$rankval.$t }}</h4>
+                </div>
+                <div flex="30">
+                    <h4><span class="italic">Rank Pts: </span>{{ team.gsx$rankingpts.$t }}</h4>
+                    <h4><span class="italic">Qual Pts: </span>{{ team.gsx$qualificationpts.$t }}</h4>
+                </div>
+                <div flex="30">
+                    <h4><span class="italic">Wins: </span>{{ team.gsx$wins.$t }}</h4>
+                    <h4><span class="italic">Ties: </span>{{ team.gsx$ties.$t }}</h4>
+                    <h4><span class="italic">Losses: </span>{{ team.gsx$losses.$t }}</h4>
+                </div>
+            </div>
+        </div>
+        <md-divider></md-divider>
+    </md-list-item>
+</md-list>

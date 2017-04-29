@@ -1,1 +1,46 @@
-Me
+<md-nav-bar md-selected-nav-item="currentNavItem">
+    <md-nav-item md-nav-click="goto('page1')" name="0">
+        Upcoming
+    </md-nav-item>
+    <md-nav-item md-nav-click="goto('page2')" name="1">
+        Completed
+    </md-nav-item>
+</md-nav-bar>
+<h4>
+    Elimination matches have yet to be announced, please come back later.
+</h4>
+<!--
+<md-list flex="">
+    <md-list-item class="md-3-line" ng-repeat="match in elim_matches | filter : { gsx$matchcompleted : { $t : currentNavItem } }">
+        <div class="md-list-item-text" layout="row">
+            <div layout="column">
+                <h3>{{ match.gsx$matchnumber.$t }}</h3>
+                <h3 style="font-style: italic">{{ match.gsx$matchtime.$t }}</h3>
+            </div>
+            <md-card>
+                <md-card-content>
+                    <h3><strong>{{ match.gsx$bluealliancenumber.$t }} Alliance</strong></h3>
+                    <h3>{{ match.gsx$blue1number.$t }}: {{ match.gsx$blue1name.$t }}</h3>
+                    <h3>{{ match.gsx$blue2number.$t }}: {{ match.gsx$blue2name.$t }}</h3>
+                    <h3>{{ match.gsx$blue3number.$t }}: {{ match.gsx$blue3name.$t }}</h3>
+                    <h2 md-colors="{color: 'primary-official'}">
+                        {{ match.gsx$bluescore.$t }}
+                    </h2>
+                </md-card-content>
+            </md-card>
+            <md-card>
+                <md-card-content>
+                    <h3><strong>{{ match.gsx$goldalliancenumber.$t }} Alliance</strong></h3>
+                    <h3>{{ match.gsx$gold1number.$t }}: {{ match.gsx$gold1name.$t }}</h3>
+                    <h3>{{ match.gsx$gold2number.$t }}: {{ match.gsx$gold2name.$t }}</h3>
+                    <h3>{{ match.gsx$gold3number.$t }}: {{ match.gsx$gold3name.$t }}</h3>
+                    <h2 md-colors="{color: 'accent-official'}">
+                        {{ match.gsx$goldscore.$t }}
+                    </h2>
+                </md-card-content>
+            </md-card>
+        </div>
+        <md-divider></md-divider>
+    </md-list-item>
+</md-list>
+-->
