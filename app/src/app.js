@@ -27,7 +27,8 @@ export default angular.module( 'finalComp', [ 'ngRoute', 'ngMaterial', Users.nam
       .icon("phone", "./assets/svg/phone.svg", 24);
 
 	var darkerYellowMap = $mdThemingProvider.extendPalette('amber', {
-		'A200': '#FFAB00'
+		'A200': '#FFAB00',
+    'official': '#c7aa36',
 	});
 
 	var darkerBlueMap = $mdThemingProvider.definePalette('PiEBlue', {
@@ -44,7 +45,8 @@ export default angular.module( 'finalComp', [ 'ngRoute', 'ngMaterial', Users.nam
 		'A100': '1b2f4a',
 		'A200': '1b2f4a',
 		'A400': 'd1d5da',
-		'A700': '2f5382'
+		'A700': '2f5382',
+    'official': '#2b3d62',
 	});
 
 	$mdThemingProvider.definePalette('darkerYellow', darkerYellowMap);
