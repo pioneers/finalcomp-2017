@@ -151,22 +151,68 @@ span.name {
     font-family: "Open Sans";
     font-weight: 200;
     font-size: 150%;
-    background-color: #eeeeee;
+    alignment: center;
+    background-color: #ffffff;
+    width: 80%;
+    border: 1px solid navy;
+    padding: 25px;
+    margin: auto;
+    box-shadow: 5px 5px 5px #888888;
 }
 
 .aboutpie {
   font-family: "Open Sans";
   font-weight: 200;
   font-size: 150%;
-  background-color: #eeeeee;
+  background-color: #ffffff;
+  width: 80%;
+  border: 1px solid navy;
+  padding: 25px;
+  margin: auto;
+  box-shadow: 5px 5px 5px #888888;
+}
+
+.eventinfo {
+  font-family: "Open Sans";
+  font-weight: 200;
+  font-size: 150%;
+  background-color: #ffffff;
+  width: 80%;
+  border: 1px solid navy;
+  padding: 25px;
+  margin: auto;
+  box-shadow: 5px 5px 5px #888888;
 }
 
 .media {
   font-family: "Open Sans";
   font-weight: 200;
   font-size: 150%;
-  background-color: #eeeeee;
+  background-color: #ffffff;
+  width: 50%;
+  border: 1px solid navy;
+  padding: 25px;
+  margin: auto;
+  box-shadow: 5px 5px 5px #888888;
   text-align: center;
+}
+
+#social li {
+  list-style-type: none;
+}
+
+.icon-bar {
+  width: 65%;
+  overflow: auto;
+  list-style-type: none;
+}
+
+.icon-bar a {
+  float: left;
+  text-align: center;
+  width: 30%;
+  font-size: 36px;
+  color: navy;
 }
 
 img {
