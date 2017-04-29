@@ -3,6 +3,7 @@ function QualsController($scope, $http) {
   var $SHEETID = "od6";
   $http.get("https://spreadsheets.google.com/feeds/list/" + $SHEETKEY + "/" + $SHEETID + "/public/values?alt=json")
     .success(function(response) {$scope.qual_matches = response.feed.entry;});
+  $scope.currentNavItem = 'upcoming';
 }
 
 export default [ '$scope', '$http', QualsController ];
