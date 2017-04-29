@@ -7,6 +7,7 @@
 function AppController($scope, $http) {
 	$http.get("https://spreadsheets.google.com/feeds/list/1efUMXdadlgB2Vr4ITq_RkECUX0f_DpNkPTuj6xL3bUE/1/public/basic?alt=json")
 		.success(function(response) {$scope.teams = response.feed.entry;});
+  $scope.currentNavItem = window.location.hash;  // for nav bar
 }
 
 /** really ugly page with all the sheet keys: 

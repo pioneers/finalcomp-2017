@@ -6,6 +6,7 @@ import 'angular-aria';
 import 'angular-material';
 import 'angular-route';
 
+import AppController from 'src/ctrls/AppController';
 import HomeController from 'src/ctrls/HomeController';
 import TeamsController from 'src/ctrls/TeamsController';
 import ScheduleController from 'src/ctrls/ScheduleController';
@@ -83,6 +84,7 @@ export default angular.module( 'finalComp', [ 'ngRoute', 'ngMaterial', Users.nam
         controller : 'RankingsController'
       });
   })
+  .controller('AppController', AppController)
   .controller('HomeController', HomeController)
   .controller('ScheduleController', ScheduleController)
   .controller('TeamsController', TeamsController)
